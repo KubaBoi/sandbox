@@ -43,7 +43,7 @@ int main()
     if (overlap < 3) 
     {
         for (int o = 0; o < overlap; o++)
-            o_str[o_str_len - (o)] = '=';
+            o_str[o_str_len - o] = '=';
     }
 
     printf("str: '%s'\n", o_str);
