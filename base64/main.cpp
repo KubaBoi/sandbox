@@ -9,7 +9,7 @@ using namespace std;
 int main() 
 {
     char table[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
-    char str[] = "Vaginy";//"Nazdar, světe! Příliš žluťoučký kůň úpěl ďábelské ódy.";
+    char str[] = "Nazdar, světe! Příliš žluťoučký kůň úpěl ďábelské ódy.";
     int len = strlen(str);
 
     int o_str_len = (len / 3) * 4 + 3;
