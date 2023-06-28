@@ -6,10 +6,10 @@
 
 using namespace std;
 
-int main() 
+char table[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
+
+char *encodeB64(char *str)
 {
-    char table[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
-    char str[] = "Nazdar, světe! Příliš žluťoučký kůň úpěl ďábelské ódy.";
     int len = strlen(str);
 
     int o_str_len = (len / 3) * 4 + 3;
@@ -24,7 +24,7 @@ int main()
     {
         for (int o = 0; o < 3; o++) {
             int offset = o * 8;
-            for (int bit = 0; bit < 8; bit++) 
+            for (int bit = 0; bit < 8; bit++) // tady to bude nejspis sahat spatne do pameti
             {
                 bit24[23 - offset] = (str[i + o] >> (7 - bit)) & 1; 
                 offset++;
@@ -45,6 +45,11 @@ int main()
         for (int o = 0; o < overlap; o++)
             o_str[o_str_len - o] = '=';
     }
+    return o_str;
+}
 
-    printf("str: '%s'\n", o_str);
+int main() 
+{
+    char str[] = "Nazdar, světe! Příliš žluťoučký kůň úpěl ďábelské ódy.";
+    printf("str: '%s'\n", encodeB64(str));
 }
