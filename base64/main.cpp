@@ -11,7 +11,7 @@ char table[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/
 char *encodeB64(char *str)
 {
     int len = strlen(str);
-
+    
     int o_str_len = (len / 3) * 4 + 3;
     char *o_str = (char *)malloc(o_str_len);
     for (int i = 0; i < o_str_len; i++)
@@ -30,7 +30,7 @@ char *encodeB64(char *str)
                 offset++;
             }
         }
-
+        
         for (int o = 0; o < 4; o++)
         {
             int offset = o * 6;
@@ -51,5 +51,8 @@ char *encodeB64(char *str)
 int main() 
 {
     char str[] = "Nazdar, světe! Příliš žluťoučký kůň úpěl ďábelské ódy.";
-    printf("str: '%s'\n", encodeB64(str));
+    printf("str: %s\n", str);
+    char *o_str = encodeB64(str);
+    printf("b64: '%s'\n", o_str);
+    free(o_str);
 }
