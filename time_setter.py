@@ -2,6 +2,8 @@ import subprocess
 import shlex
 import datetime
 
+# need to be used only once, time will remain even after reboot
+
 nw = datetime.datetime.now()
 nw = nw.replace(hour=nw.hour+4)
 time_string = nw.isoformat()
