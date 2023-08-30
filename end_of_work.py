@@ -1,7 +1,7 @@
 import datetime
 
 dt = datetime.datetime.now()
-dt = dt.replace(hour=19, minute=0)
+dt = dt.replace(hour=18, minute=0)
 
 split = "minutes"
 old_val = 0
