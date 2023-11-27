@@ -1,3 +1,12 @@
+/*
+Vezmou se vzdycky 3 bajty, ktery se spoji do 3*8=24 bitoveho retezce
+ten retezec se potom rozdeli na 4 6ti bitové hodnoty
+kazda z tehle hodnot je index znaku `char table[]`
+
+pokud pocet nevychazi presne na trojice, zakoduje se posledni nebo posledni dva
+bajty a pridaji se rovnitka
+*/
+
 
 #include <stdio.h>
 #include <iostream>
